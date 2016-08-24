@@ -21,7 +21,7 @@ class Mamis_DeleteShipment_Model_Observer
     public function getDeleteUrl($block)
     {
         return $block->getUrl(
-            'mamis_deleteshipment/adminhtml_shipment/delete',
+            'adminhtml/mamisdeleteshipment_shipment/delete',
             array('shipment_id' => $block->getShipment()->getId())
         );
     }

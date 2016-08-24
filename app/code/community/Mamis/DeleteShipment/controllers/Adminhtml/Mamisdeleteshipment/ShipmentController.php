@@ -1,6 +1,20 @@
 <?php
+/**
+*  Mamis.IT
+*
+*  NOTICE OF LICENSE
+*
+*  This source file is subject to the EULA
+*  that is available through the world-wide-web at this URL:
+*  http://www.mamis.com.au/licencing
+*
+*  @category   Mamis
+*  @copyright  Copyright (c) 2015 by Mamis.IT Pty Ltd (http://www.mamis.com.au)
+*  @author     Matthew Muscat <matthew@mamis.com.au>
+*  @license    http://www.mamis.com.au/licencing
+*/
 
-class Mamis_DeleteShipment_Adminhtml_ShipmentController extends Mage_Adminhtml_Controller_Action
+class Mamis_DeleteShipment_Adminhtml_Mamisdeleteshipment_ShipmentController extends Mage_Adminhtml_Controller_Action
 {
     protected function deleteAction()
     {
@@ -17,8 +31,6 @@ class Mamis_DeleteShipment_Adminhtml_ShipmentController extends Mage_Adminhtml_C
         try {
             foreach ($shipmentItems as $shipmentItem)
             {
-                Mage::log($shipmentItem->debug());
-
                 // Reset the item shipment qty for items part of the shipment
                 $orderItem = $order->getItemById($shipmentItem->getOrderItemId());
                 $orderItem->setQtyShipped($orderItem->getQtyShipped() - $shipmentItem->getQty());

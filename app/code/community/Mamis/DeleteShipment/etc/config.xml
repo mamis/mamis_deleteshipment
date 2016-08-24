@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Mamis_DeleteShipment>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Mamis_DeleteShipment>
     </modules>
     <global>
@@ -24,17 +24,10 @@
     </global>
     <admin>
         <routers>
-            <mamis_deleteshipment>
-                <use>admin</use>
-                <args>
-                    <module>Mamis_DeleteShipment</module>
-                    <frontName>mamis_deleteshipment</frontName>
-                </args>
-            </mamis_deleteshipment>
             <adminhtml>
                 <args>
                     <modules>
-                        <Mamis_DeleteShipment after="Mage_Adminhtml">Mamis_DeleteShipment_Adminhtml</Mamis_DeleteShipment>
+                        <mamis_deleteshipment after="Mage_Adminhtml">Mamis_DeleteShipment_Adminhtml</mamis_deleteshipment>
                     </modules>
                 </args>
             </adminhtml>
@@ -43,11 +36,11 @@
     <adminhtml>
         <translate>
             <modules>
-                <Mamis_MailChimp>
+                <mamis_deleteshipment>
                     <files>
-                        <default>Mamis_MailChimp.csv</default>
+                        <default>mamis_deleteshipment.csv</default>
                     </files>
-                </Mamis_MailChimp>
+                </mamis_deleteshipment>
             </modules>
         </translate>
         <events>
